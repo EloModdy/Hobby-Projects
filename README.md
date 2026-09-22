@@ -4,7 +4,10 @@ This is something I made after looking at QR codes, it isn't too robust for righ
 You can encode images to get a full color image, and then decode them for later. It works especially great for getting around message filters, because you are only sending an image.
 All of the codes are made with a certain cipher and a random seed, so they are doubly encoded.
 If you want to type something otherwise unavailable, you can use //x (x being a digit) to reverse the next x characters afterward.
-For school computers, I recommend using pythononline.net to run it. However, when it creates the image, delete any versions that end up in the /src folder, and move the one outside of it to the inside. If the photo shows up as corrupted, just retry.
+
+To anyone running this on a school computer, please use https://www.onlinegdb.com/online_python_compiler to run it. All other interpreters aren't effective. To upload a file, just look in the top left and click "upload file", then select it. If you're going to send an encoded image to somebody, make sure to include the file, this README, and "converted.png".
+
+Best of luck, I hope you get up to all of the mischiefs!
 
 Examples:
 
