@@ -33,6 +33,16 @@ def image_encode(text):
 
     seed = randint(0,255)
     text = text.encode("ascii", "ignore").decode()
+    text_list = list(text)
+
+    for k,v in enumerate(text_list):
+        if v.isdigit() and text_list[k-1] == "/" and text_list[k-2] == "/":
+            reverse_num = int(v)
+            next_chars = text_list[k+1:k+reverse_num+1]
+            next_chars.reverse()
+            text_list = [*text_list[0:k-2], *next_chars, *text_list[k+reverse_num+1::]]
+            print(text_list)
+    text = "".join(text_list)
     text = encode_text(text, seed)
 
     ascii_text = [ord(letter) for letter in text]
@@ -66,8 +76,6 @@ def image_decode(img_title):
         text = decode_text(text, seed)
         print(text)
         
-            
-
 
 valid_ops = ["image", "text", "encode", "decode"]
 operation = ""
