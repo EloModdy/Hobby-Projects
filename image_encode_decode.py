@@ -41,7 +41,7 @@ def image_encode(text):
             next_chars = text_list[k+1:k+reverse_num+1]
             next_chars.reverse()
             text_list = [*text_list[0:k-2], *next_chars, *text_list[k+reverse_num+1::]]
-            print(text_list)
+            
     text = "".join(text_list)
     text = encode_text(text, seed)
 
@@ -62,8 +62,7 @@ def image_encode(text):
 
     img = Image.fromarray(pixels)
     print("This image is saved under converted.png")
-    img.show()
-    img.save("converted.png")
+    img.save("converted.png", format="PNG")
 
 def image_decode(img_title):
     with Image.open(img_title) as img:
